@@ -1,8 +1,9 @@
 package usecases
 
 import (
-	"domain"
 	"fmt"
+
+	"gca/domain"
 )
 
 type UserRepository interface {

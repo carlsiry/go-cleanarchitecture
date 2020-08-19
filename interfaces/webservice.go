@@ -5,7 +5,8 @@ import (
 	"io"
 	"net/http"
 	"strconv"
-	"usecases"
+
+	"gca/usecases"
 )
 
 type OrderInteractor interface {

@@ -1,12 +1,14 @@
 package interfaces_test
 
 import (
-	"domain"
 	_ "fmt"
-	"infrastructure"
-	"interfaces"
+
+	"gca/domain"
+	"gca/infrastructure"
+	"gca/interfaces"
+	"gca/usecases"
+	
 	"testing"
-	"usecases"
 )
 
 func Test_UserRepository(t *testing.T) {

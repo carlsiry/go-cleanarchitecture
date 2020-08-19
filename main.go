@@ -1,16 +1,19 @@
 package main
 
 import (
-	"usecases"
-	"interfaces"
-	"infrastructure"
+	"fmt"
 	"net/http"
+
+	"gca/infrastructure"
+	"gca/interfaces"
+	"gca/usecases"
 )
 
 func main() {
+	fmt.Println("loading...")
 	dbHandler := infrastructure.NewSqliteHandler("/var/tmp/production.sqlite")
 
-	handlers := make(map[string] interfaces.DbHandler)
+	handlers := make(map[string]interfaces.DbHandler)
 	handlers["DbUserRepo"] = dbHandler
 	handlers["DbCustomerRepo"] = dbHandler
 	handlers["DbItemRepo"] = dbHandler
@@ -29,4 +32,5 @@ func main() {
 		webserviceHandler.ShowOrder(res, req)
 	})
 	http.ListenAndServe(":8080", nil)
+	fmt.Println("server runing at :8080 !")
 }

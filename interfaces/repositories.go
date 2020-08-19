@@ -1,9 +1,10 @@
 package interfaces
 
 import (
-	"domain"
 	"fmt"
-	"usecases"
+
+	"gca/domain"
+	"gca/usecases"
 )
 
 type DbHandler interface {
